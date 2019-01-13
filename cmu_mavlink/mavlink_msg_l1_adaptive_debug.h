@@ -272,6 +272,7 @@ static inline void mavlink_msg_l1_adaptive_debug_send_buf(mavlink_message_t *msg
  */
 static inline uint64_t mavlink_msg_l1_adaptive_debug_get_timestamp(const mavlink_message_t* msg)
 {
+    printf("Decode Fin - 0\n");
     return _MAV_RETURN_uint64_t(msg,  0);
 }
 
@@ -282,6 +283,7 @@ static inline uint64_t mavlink_msg_l1_adaptive_debug_get_timestamp(const mavlink
  */
 static inline uint16_t mavlink_msg_l1_adaptive_debug_get_seq_id(const mavlink_message_t* msg)
 {
+    printf("Decode Fin - 1\n");
     return _MAV_RETURN_uint16_t(msg,  68);
 }
 
@@ -292,6 +294,7 @@ static inline uint16_t mavlink_msg_l1_adaptive_debug_get_seq_id(const mavlink_me
  */
 static inline uint16_t mavlink_msg_l1_adaptive_debug_get_avl_hat(const mavlink_message_t* msg, float *avl_hat)
 {
+    printf("Decode Fin - 2\n");
     return _MAV_RETURN_float_array(msg, avl_hat, 3,  8);
 }
 
@@ -302,6 +305,7 @@ static inline uint16_t mavlink_msg_l1_adaptive_debug_get_avl_hat(const mavlink_m
  */
 static inline uint16_t mavlink_msg_l1_adaptive_debug_get_dst_hat(const mavlink_message_t* msg, float *dst_hat)
 {
+    printf("Decode Fin - 3\n");
     return _MAV_RETURN_float_array(msg, dst_hat, 3,  20);
 }
 
@@ -312,6 +316,7 @@ static inline uint16_t mavlink_msg_l1_adaptive_debug_get_dst_hat(const mavlink_m
  */
 static inline uint16_t mavlink_msg_l1_adaptive_debug_get_ang_vel(const mavlink_message_t* msg, float *ang_vel)
 {
+    printf("Decode Fin - 4\n");
     return _MAV_RETURN_float_array(msg, ang_vel, 3,  32);
 }
 
@@ -322,6 +327,7 @@ static inline uint16_t mavlink_msg_l1_adaptive_debug_get_ang_vel(const mavlink_m
  */
 static inline uint16_t mavlink_msg_l1_adaptive_debug_get_lpd(const mavlink_message_t* msg, float *lpd)
 {
+    printf("Decode Fin - 5\n");
     return _MAV_RETURN_float_array(msg, lpd, 3,  44);
 }
 
@@ -332,6 +338,7 @@ static inline uint16_t mavlink_msg_l1_adaptive_debug_get_lpd(const mavlink_messa
  */
 static inline uint16_t mavlink_msg_l1_adaptive_debug_get_rates(const mavlink_message_t* msg, float *rates)
 {
+    printf("Decode Fin - 6\n");
     return _MAV_RETURN_float_array(msg, rates, 3,  56);
 }
 
@@ -343,6 +350,7 @@ static inline uint16_t mavlink_msg_l1_adaptive_debug_get_rates(const mavlink_mes
  */
 static inline void mavlink_msg_l1_adaptive_debug_decode(const mavlink_message_t* msg, mavlink_l1_adaptive_debug_t* l1_adaptive_debug)
 {
+    printf("Decode Fin - 7\n");
 #if MAVLINK_NEED_BYTE_SWAP || !MAVLINK_ALIGNED_FIELDS
     l1_adaptive_debug->timestamp = mavlink_msg_l1_adaptive_debug_get_timestamp(msg);
     mavlink_msg_l1_adaptive_debug_get_avl_hat(msg, l1_adaptive_debug->avl_hat);
